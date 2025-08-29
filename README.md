@@ -1,36 +1,33 @@
-### WLSafe:Whitelist Safety Guard
-WLSafe is a utility to block untrusted executables.
-It will send SIGKILL (9) to all executables except current running executables and whitelisted executables.
-### How to use
-## Download binary from releases
-Pre-compiled binary will only work for glibc based linux distro.
+### WLSafe: Whitelist Safety Guard
+WLSafe is a utility designed to block untrusted executables.  
+It will send SIGKILL (9) to all executables except the currently running ones and those explicitly whitelisted.
 
-Go to Release Section --> 1.0.0 --> WLSafe to download
-## Build it yourself
-Make sure you have build-essential (or similar things in other distro like build-base in alpine).
+### How to Use
+## Download Prebuilt Binary
+Precompiled binaries are only compatible with glibc-based Linux distributions.  
 
-use gcc-10+ to compile the executable.
-### /etc/whitelist format
-If there is no /etc/whitelist exists or the list is empty,
+Go to the Release Section → 1.0.0 → WLSafe to download.
 
-WLSafe will block all new spawned executables.
+## Build It Yourself
+Make sure you have build-essential (or the equivalent, e.g., build-base on Alpine).  
+Use gcc 10+ to compile the executable.
 
+### /etc/whitelist Format
+If /etc/whitelist does not exist or is empty,  
+WLSafe will block all newly spawned executables.
 
-To add a whitelist,touch /etc/whitelist and write the ABSOLUTE path into it (like bash --> /bin/bash)
+To add a whitelist, create /etc/whitelist and write the absolute path of the executable (e.g., /bin/bash).  
 
+You can also add entries like:  *
+to allow all executables within a directory.
 
-You can also add /<dir>/* to allow all executables under this directory.
-## WARNING
-An incorrect whitelist set-up may cause your PC no longer boots.
+### WARNING
+An incorrect whitelist setup may prevent your PC from booting.  
 
+It is strongly recommended to add essential system paths to the whitelist so WLSafe does not block them.  
 
-It is recommended to add system paths into the whitelist so that WLSafe will not block them.
+You may run WLSafe as a service, but remember to whitelist system paths first.  
 
+I am not responsible if your PC becomes unbootable—this is entirely at your own risk.  
 
-You can run the executable as a service but remember to add system path.
-
-
-Do not complain to me if your PC bricked because it is not my code's problem.
-
-
-USE THIS AT YOUR OWN RISK.
+USE THE UTILITY AT YOUR OWN RISK.
