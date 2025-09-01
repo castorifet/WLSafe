@@ -1,7 +1,11 @@
 ### WLSafe: Whitelist Safety Guard
 WLSafe is a utility designed to block untrusted executables.  
 It will send SIGKILL (9) to all executables except the currently running ones and those explicitly whitelisted.
-
+#### TODO
+GUI
+Auto detect system executables
+Whitelist File Protection
+Permissions
 ### How to Use
 ## Download Prebuilt Binary
 Precompiled binaries are only compatible with glibc-based Linux distributions.  
